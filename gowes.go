@@ -5,9 +5,9 @@ func Hello() string {
 }
 
 type SocketPayload struct {
-	From        string      `json:"from"`
-	To          []Client    `json:"to"`
-	MessageType string      `json:"message_type"`
+	From        string      `json:"from,omitempty"`
+	To          []Client    `json:"to,omitempty"`
+	MessageType string      `json:"message_type,omitempty"`
 	MessageData interface{} `json:"message_data"`
 }
 
@@ -25,4 +25,5 @@ const (
 	// TypeMessage is a message type
 	TypeGetNotification  = "get_notification"
 	TypeSendNotification = "send_notification"
+	TypeReadNotification = "read_notification"
 )
